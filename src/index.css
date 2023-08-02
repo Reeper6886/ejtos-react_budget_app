@@ -11,3 +11,51 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.currency {
+    display: inline-block;
+    color:white;
+    background-color: lightgreen;
+    padding: 5px;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  
+  .currency-dropdown {
+    background-color: transparent;
+    border: 1px solid lightgreen;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .currency-dropdown:hover {
+    background-color: purple;
+    color: black;
+  }
+  .currency-dropdown:focus {
+    background-color: lightgreen;
+    color: black;
+    outline:none;
+  }
+  .currency {
+    display: inline-block;
+    color: white;
+    background-color: lightgreen;
+    padding: 5px;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  
+  .currency select {
+    background-color: transparent;
+    border: 1px solid lightgreen;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .currency.open select {
+    background-color: white;
+    color: black;
+  }
+  
