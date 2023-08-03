@@ -1,41 +1,34 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
 .currency {
     display: inline-block;
-    color:white;
+    color: white;
     background-color: lightgreen;
     padding: 5px;
     border-radius: 5px;
     margin-right: 10px;
-  }
-  
-  .currency-dropdown {
-    background-color: transparent;
-    border: 1px solid lightgreen;
-    color: white;
+    position: relative;
     cursor: pointer;
-    transition: background-color 0.3s;
   }
   
-  .currency-dropdown:hover {
-    background-color: purple;
-    color: black;
+  .selected {
+    display: flex;
+    justify-content: space-between;
   }
-  .currency-dropdown:focus {
+  
+  .options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
     background-color: lightgreen;
+    border: 1px solid lightgreen;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    z-index: 2;
+  }
+  
+  .options > div {
+    padding: 5px;
     color: black;
-    outline:none;
   }
   .currency {
     display: inline-block;
@@ -44,18 +37,73 @@ code {
     padding: 5px;
     border-radius: 5px;
     margin-right: 10px;
-  }
-  
-  .currency select {
-    background-color: transparent;
-    border: 1px solid lightgreen;
-    color: white;
+    position: relative;
     cursor: pointer;
-    transition: background-color 0.3s;
   }
   
-  .currency.open select {
+  .selected {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: lightgreen;
+    border: 1px solid black;
+    border-radius: 0 0 5px 5px;
+    z-index: 2;
+    display: none; /* Hide options by default */
+  }
+  
+  .currency.open .options {
+    display: block; /* Show options when .currency has the open class */
+  }
+  
+  .options > div {
+    padding: 5px;
+    color: black;
+  }
+  
+  .options > div:hover {
     background-color: white;
     color: black;
   }
+  
+  .options > div:hover {
+    background-color: white;
+    color: black;
+  }
+  
+/* expense-item.css */
+.round-button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 30px; /* Increase the font size for larger icons */
+    font-weight: 900;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    outline: none; /* Remove the outline */
+    border: none; /* Remove the border */
+    padding-bottom: 8px; /* Remove any padding */
+  }
+  
+  .green-button {
+    background-color: #4FAC5C;
+    color: white; /* Set the text color to match the background color */
+  }
+  
+  .red-button {
+    background-color: #AE2318;
+    color: white; /* Set the text color to match the background color */
+  }
+
+  
+
   

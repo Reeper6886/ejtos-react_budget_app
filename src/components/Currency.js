@@ -6,23 +6,46 @@ const Currency = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleCurrencyChange = (e) => {
-    dispatch({ type: 'SET_CURRENCY', payload: e.target.value });
+    dispatch({ type: 'CHG_CURRENCY', payload: e.target.dataset.value });
+    setIsOpen(false);
+  };
+
+  const getCurrencyName = (currencySymbol) => {
+    switch (currencySymbol) {
+      case '$':
+        return 'Dollar';
+      case '£':
+        return 'Pound';
+      case '€':
+        return 'Euro';
+      case '₹':
+        return 'Rupee';
+      default:
+        return '';
+    }
   };
 
   return (
-    <div className={`currency ${isOpen ? 'open' : ''}`}>
-      <span>Currency:</span>
-      <select
-        value={currency}
-        onChange={handleCurrencyChange}
-        onFocus={() => setIsOpen(true)}
-        onBlur={() => setIsOpen(false)}
-      >
-        <option value="$">Dollar ($)</option>
-        <option value="£">Pound (£)</option>
-        <option value="€">Euro (€)</option>
-        <option value="₹">Rupee (₹)</option>
-      </select>
+    <div className={`currency ${isOpen ? 'open' : ''}`} onBlur={() => setIsOpen(false)}>
+      <div className="selected" onClick={() => setIsOpen((prev) => !prev)}>
+        {`Currency: (${currency} ${getCurrencyName(currency)})`}
+      </div>
+      {isOpen && (
+        <div className="options">
+          <div data-value="$" onClick={handleCurrencyChange}>
+            $ Dollar
+          </div>
+          <div data-value="£" onClick={handleCurrencyChange}>
+            £ Pound
+          </div>
+          <div data-value="€" onClick={handleCurrencyChange}>
+            € Euro
+          </div>
+          <div data-value="₹" onClick={handleCurrencyChange}>
+            ₹ Rupee
+          </div>
+        </div>
+      )}
     </div>
   );
 };

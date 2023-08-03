@@ -3,7 +3,7 @@ import { AppContext } from '../context/AppContext';
 
 const Budget = () => {
   const { budget, dispatch } = useContext(AppContext);
-  const { expenses } = useContext(AppContext);
+  const { expenses, currency } = useContext(AppContext);
   const totalExpenses = expenses.reduce((total, item) => {
     return (total = total + item.cost);
 }, 0);
@@ -52,7 +52,7 @@ const Budget = () => {
         </div>
       ) : (
         <div>
-          <span>Budget: £{budget}</span>
+          <span>Budget: {currency}{budget}</span>
           <button onClick={() => setEditable(true)}>Edit</button>
         </div>
       )}
