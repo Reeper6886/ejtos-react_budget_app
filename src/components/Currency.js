@@ -28,7 +28,7 @@ const Currency = () => {
   return (
     <div className={`currency ${isOpen ? 'open' : ''}`} onBlur={() => setIsOpen(false)}>
       <div className="selected" onClick={() => setIsOpen((prev) => !prev)}>
-        {`Currency: (${currency} ${getCurrencyName(currency)})`}
+        {`Currency: (${currency} ${getCurrencyName(currency)})▼`}
       </div>
       {isOpen && (
         <div className="options">

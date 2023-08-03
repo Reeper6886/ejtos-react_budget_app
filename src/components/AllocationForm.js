@@ -51,7 +51,7 @@ const AllocationForm = (props) => {
                 <option value="Reduce" name="Reduce">Reduce</option>
                   </select>
                     <div className="input-group-prepend" style={{ marginLeft: '2rem' }}>
-                        <label className="input-group-text" htmlFor="inputGroupSelect03">{currency}</label>
+                        <label className="currency-label">{currency}</label>
                     </div>
                     <input
                         required='required'

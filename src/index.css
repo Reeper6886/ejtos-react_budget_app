@@ -104,6 +104,8 @@
     color: white; /* Set the text color to match the background color */
   }
 
-  
+  .currency-label {
+      padding-right: 10px;
+  }
 
   
